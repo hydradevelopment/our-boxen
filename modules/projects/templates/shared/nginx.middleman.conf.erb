@@ -1,0 +1,21 @@
+server {
+
+  listen 80;
+  root <%= @repo_dir %>/build;
+  server_name <%= @server_name %>;
+
+  # Logging
+  access_log <%= scope.lookupvar "nginx::config::logdir" %>/<%= @name %>.access.log main;
+  access_log <%= scope.lookupvar "nginx::config::logdir" %>/<%= @name %>.error.log main;
+
+  # Variables
+  index index.html;
+  client_max_body_size 1M;
+
+  # Error Pages
+  error_page 500 502 503 504 /50x.html;
+
+  # Proxy
+  try_files $uri/index.html $uri =404;
+
+}
