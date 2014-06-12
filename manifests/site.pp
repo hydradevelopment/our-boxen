@@ -84,6 +84,8 @@ node default {
     ]:
   }
 
+  include hydra::environment
+
   file { "${boxen::config::srcdir}/our-boxen":
     ensure => link,
     target => $boxen::config::repodir
