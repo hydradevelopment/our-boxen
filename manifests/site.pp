@@ -57,6 +57,11 @@ node default {
   include git
   include hub
   include nginx
+  include postgresql
+  include dropbox
+  include chrome
+  include vagrant
+  include iterm2::stable
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
