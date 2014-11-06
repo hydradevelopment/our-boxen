@@ -3,20 +3,14 @@ class hydra::apps::npm {
 
   $version = 'v0.10.33'
 
-  class {
-    'nodejs::global':
-      version => $version;
-  }
+  # install any arbitrary nodejs version
+  nodejs::version { $version: }
 
-  nodejs::module {
-    'coffee-script':
-      node_version => $version;
+  # set the global nodejs version
+  class { 'nodejs::global': version => $version }
 
-    'coffeelint':
-      node_version => $version;
-
-    'jshint':
-      node_version => $version;
+  nodejs::module { [ 'coffee-script', 'coffeelint', 'jshint' ]:
+    node_version => $version;
   }
 
 }

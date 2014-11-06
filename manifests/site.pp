@@ -68,9 +68,6 @@ node default {
     fail('Please enable full disk encryption and try again')
   }
 
-  # install any arbitrary nodejs version
-  nodejs::version { 'v0.10.33': }
-
   # default ruby versions
   ruby::version { '1.9.3': }
   ruby::version { '2.0.0': }
