@@ -78,6 +78,7 @@ node default {
   # common, useful packages
   package {
     [
+      'ag',
       'ack',
       'findutils',
       'gnu-tar'
