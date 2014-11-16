@@ -14,7 +14,9 @@ class people::faun {
     'unicorn': {
       include projects::all
     }
-    default: {}
+    default: {
+      include hydra::apps::rdio
+    }
   }
 
   repository { 'faun-dotfiles':
