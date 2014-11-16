@@ -1,7 +1,7 @@
 # Include global packages for the whole team
 class hydra::apps::npm {
 
-  $version = 'v0.10.33'
+  $version = 'v0.10'
 
   # install any arbitrary nodejs version
   nodejs::version { $version: }
