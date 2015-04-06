@@ -6,7 +6,7 @@ class people::faun {
     directories => {
       home      => "/Users/${::boxen_user}",
       src       => '/Users/faun/src/',
-      my_src    => '/Users/faun/src/faun',
+      my_src    => '/Users/faun/src/github.com/faun',
     }
   }
 
