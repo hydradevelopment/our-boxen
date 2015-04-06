@@ -1,15 +1,16 @@
 ---
-# This is an example of the kinds of things that you can configure via hiera.
-# If you've left the defaults in `/hiera.yml`, you might want to copy this file
-# to `hiera/common.yaml`, or feel free to start with a blank slate!
+ruby::global::version: "2.2.1"
+ruby::provider: "rbenv"
+ruby::build::ensure: "v20150319zf"
+ruby::rbenv::ensure: "v0.4.0"
 
-# Have a gander at some of these examples to get an idea of some of the things
-# that you can affect 'out of the box', and then customise to your
-# heart's content.
+git::configdir: "%{::boxen::config::configdir}/git"
+git::package: 'boxen/brews/git'
+git::version: '2.2.1'
+git::global_excludesfile: "/Users/%{::boxen_user}/.gitignore"
 
-# See https://github.com/boxen/puppet-ruby for docs
-"ruby::global::version": "2.1.4"
-"ruby::provider": "rbenv"
+"nodejs::version::compile":
+  "v0.10": true
 
-"ruby::build::ensure": "v20141113"
-"ruby::rbenv::ensure": "v0.4.0"
+"nodejs::version::alias":
+  "v0.10": "v0.10.33"
