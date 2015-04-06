@@ -4,11 +4,15 @@ class hydra::apps::npm {
 
   nodejs::version { $version: }
 
-  # set the global nodejs version
-  class { 'nodejs::global': version => $version }
+  unless defined(Nodejs::Version[$version]) {
+    class { 'nodejs::global':
+      version => $version
+    }
 
-  nodejs::module { [ 'coffee-script', 'coffeelint', 'jshint' ]:
-    node_version => $version;
+    $global_modules = ['coffee-script', 'coffeelint', 'jshint']
+    nodejs::module { $global_modules:
+      node_version => $version
+    }
   }
 
 }
