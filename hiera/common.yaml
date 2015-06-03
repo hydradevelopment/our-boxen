@@ -1,5 +1,5 @@
 ---
-ruby::global::version: "2.2.1"
+ruby::global::version: "2.2.2"
 ruby::provider: "rbenv"
 ruby::build::ensure: "v20150319zf"
 ruby::rbenv::ensure: "v0.4.0"
