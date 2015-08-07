@@ -69,7 +69,7 @@ sudo chown ${USER}:staff /opt/boxen
 git clone https://github.com/boxen/our-boxen /opt/boxen/repo
 cd /opt/boxen/repo
 git remote rm origin
-git remote add origin <the location of my new git repository>
+git remote add origin git@github.com:hydradevelopment/our-boxen.git
 git push -u origin master
 ```
 
@@ -94,7 +94,7 @@ If you _don't_ want to use boxen-web, folks can get using your boxen like so:
 ```
 sudo mkdir -p /opt/boxen
 sudo chown ${USER}:staff /opt/boxen
-git clone <location of my new git repository> /opt/boxen/repo
+git clone git@github.com:hydradevelopment/our-boxen.git /opt/boxen/repo
 cd /opt/boxen/repo
 ./script/boxen
 ```
